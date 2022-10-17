@@ -1,15 +1,17 @@
 import { useState } from 'react'
 
 function App() {
-  // const [number, setNumber] = useState(0)
-
-  const handleChangeNum = () => {
-    
+  const [number, setNumber] = useState(0)
+  
+  const handleNum = (event) => {
+    setNumber(event.target.value)
+    console.log(number);
   }
 
   return (
     <div className="App">
-      <input type="text" onClick={(event) => setNumber(event.target.value)}/>
+      <h1>useState</h1>
+      <input type="text" onChange={(event) => handleNum(event)}/>
     </div>
   )
 }
